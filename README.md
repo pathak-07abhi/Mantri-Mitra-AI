@@ -1,8 +1,3 @@
-# Create a polished GitHub README.md file using pypandoc as required for markdown generation
-
-import pypandoc
-
-readme_md = """
 # 🇮🇳 Mantri Mitra AI
 ### Ministerial Intelligence Assistant for Public Leaders
 
