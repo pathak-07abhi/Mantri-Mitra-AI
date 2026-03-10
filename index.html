@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="theme-color" content="#1B4F8A" />
+    <meta name="description" content="Mantri Mitra AI — AI-Powered Constituency Management for Indian MLAs and MPs" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Open Graph (for social sharing) -->
+    <meta property="og:title" content="Mantri Mitra AI — मंत्री मित्र" />
+    <meta property="og:description" content="AI-Powered Constituency Management for Indian Public Officials" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon — Indian flag emoji as SVG favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>" />
+
+    <title>Mantri Mitra AI — मंत्री मित्र</title>
+
+    <style>
+      /* Prevent flash of unstyled content */
+      html, body, #root {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        background: #1B4F8A;
+      }
+      /* Loading spinner shown before React mounts */
+      #loading {
+        position: fixed;
+        inset: 0;
+        background: #1B4F8A;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        z-index: 9999;
+        transition: opacity 0.4s;
+      }
+      #loading.hide { opacity: 0; pointer-events: none; }
+      .spin {
+        width: 40px; height: 40px;
+        border: 3px solid rgba(255,255,255,0.2);
+        border-top-color: #FF6600;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <!-- Loading screen — hidden after React mounts -->
+    <div id="loading">
+      <div style="font-size:48px">🇮🇳</div>
+      <div style="font-size:20px;font-weight:700">मंत्री मित्र</div>
+      <div style="font-size:13px;opacity:0.7">Mantri Mitra AI — Loading…</div>
+      <div class="spin"></div>
+    </div>
+
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      // Hide loading screen once React has rendered
+      window.__hideLoading = function() {
+        const el = document.getElementById('loading');
+        if (el) { el.classList.add('hide'); setTimeout(() => el.remove(), 500); }
+      };
+    </script>
+  </body>
+</html>
