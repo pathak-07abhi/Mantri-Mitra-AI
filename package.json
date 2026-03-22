@@ -1,0 +1,21 @@
+{
+  "name": "mantri-mitra-ai",
+  "version": "1.0.0",
+  "description": "Mantri Mitra AI \u2014 Constituency Management Dashboard for Indian MLAs/MPs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "mammoth": "^1.8.0",
+    "pdfjs-dist": "3.11.174"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.5"
+  }
+}
