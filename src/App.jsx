@@ -3729,7 +3729,7 @@ function AuthPage({ onLogin }) {
   const [authNow, setAuthNow] = useState(new Date());
   useEffect(()=>{ const t=setInterval(()=>setAuthNow(new Date()),1000); return()=>clearInterval(t); },[]);
   const [view, setView] = useState("login"); // "login" | "signup"
-  const [form, setForm] = useState({ name:"", role:"MLA", constituency:"", email:"", phone:"", password:"", confirm:"", empId:"" });
+  const [form, setForm] = useState({ name:"", role:"", constituency:"", email:"", phone:"", password:"", confirm:"", empId:"" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPass, setShowPass] = useState(false);
